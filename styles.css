@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
   }
 /* Main Grid Container */
 .container {
@@ -20,7 +21,7 @@
 
   /* Header Container */
 .header {
-    background-color: #393f4d;
+    background-color: #ffffff;
     grid-area: 1 / 2 / 2 / 3; 
 
 
@@ -29,6 +30,9 @@
     gap: 4px;
     grid-template-rows: 2fr 3fr;
     grid-template-columns: 3fr 2fr; 
+
+    /* -webkit-box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);  */
+box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 
 }
 
@@ -39,9 +43,34 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 9fr; 
 }
-#search-grid-item{
-    border-color: #b6c48e;
-    border-width: 2px;
+.search-logo{
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.search-bar {
+    width: 90%;
+    height: 50%;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 20px; /* Rounded edges */
+    padding: 5px 15px; /* Top and bottom padding + left and right padding */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    outline: none; /* Removes the default focus outline */
+    font-size: 16px; /* Larger text */
+    transition: all 0.3s ease; /* Smooth transition for hover and focus effects */
+  }
+
+  .search-bar:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Darker shadow on hover */
+  }
+
+  .search-bar:focus {
+    border-color: #0056b3; /* Darker blue border on focus */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Slightly darker shadow on focus */
+  }
+.search-grid-item{
+    /* justify-self: center; */
+    align-self: center;
 }
 
 #profile{
@@ -52,6 +81,33 @@
     grid-template-columns: 1fr 1fr 2fr; 
 
 }
+.profile-grid-item{
+    justify-self: start;
+    align-self: center;
+}
+
+.profile-logo{
+    width: 25%;
+    justify-self: end;
+    align-self: center;
+
+}
+.profile-pic{
+    height: 50%;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.sphere-image {
+    width: 50%;
+    height: 100%;
+    border-radius: 50%; /* This makes the image round */
+    border: 1px solid #8b8b8b; /* Adjust border thickness and color */
+    /* Ensure the image covers the space and is centered, useful if the image isn't perfectly square */
+    object-fit: cover;
+  }
+
+
 #greeting{
     overflow: auto;
     display: grid;
@@ -59,7 +115,29 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 3fr; 
 
+
 }
+.greeting-logo{
+    width: 75%;
+    height: 75%;
+    grid-area: 1 / 1 / 3 / 2;
+
+    justify-self: center;
+    align-self: center;
+
+}
+.greeting-small-text{
+    justify-self: start;
+    align-self: end;
+    font-size: small;
+}
+.greeting-big-text{
+    justify-self: start;
+    align-self: center;
+    font-size: large;
+}
+
+
 #interact-buttons{
     overflow: auto;
     display: grid;
@@ -69,9 +147,37 @@
 
 }
 
+.button-grid-item{
+    justify-self: center;
+    align-self: center;
+}
+
+.myButton {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top & bottom padding, left & right padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    outline: none; /* Removes the outline */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+
+  .myButton:hover, .myButton:focus {
+    background-color: #0056b3; /* Slightly darker blue on hover/focus */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Darker shadow on hover/focus */
+    transform: translateY(-2px); /* Slightly lifts the button */
+  }
+
+  .myButton:active {
+    background-color: #004494; /* Even darker blue when clicked */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Lower shadow to simulate pressing */
+    transform: translateY(1px); /* Button goes back down when pressed */
+  }
   /* Sidebare Container */
 .sidebar{
-    background-color: #b6c48e;
+    background-color: #b8b8b8;
     grid-area: 1 / 1 / 3 / 2; 
 
     overflow: auto;
@@ -83,12 +189,26 @@
 }
 
 #dash{
-    place-self: center;
+    /* place-self: center; */
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr;
+    
+}
+.logo{
+    /* height: 50%;
+    width: 50%; */
+    font-size: 4vh;
+    align-self: center;
+    
 }
 
 #navigation{
     height: 100%;
-    background-color: rgb(23, 77, 99);
+    /* background-color: rgb(23, 77, 99); */
     align-self: start;
 
     overflow: auto;
@@ -96,19 +216,25 @@
     gap: 4px;
 
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 3fr;
 }
 
-.nav-grid-item{
-    
-    place-self: center;
+.nav-logo, .set-logo{
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.nav-grid-item, .set-grid-item{
+    justify-self: start;
+    align-self: center;
+    /* place-self: center; */
     /*  */
 }
 
 #settings{
     align-self: start;
     height: 100%;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     align-self: start;
 
     overflow: auto;
@@ -116,12 +242,12 @@
     gap: 4px;
 
     grid-template-rows: 1fr 1fr 1fr 1fr 5fr ;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 3fr;;
 }
 
 /* main-content container */
 .main-content {
-    background-color: #2f4d92;
+    background-color: #ccdbff;
     grid-area: 2 / 2 / 3 / 3; 
 
     overflow: auto;
@@ -147,6 +273,7 @@
 
 
 #right-sidebar{
+    background-color: #7583a3;
     overflow: auto;
     display: grid;
     gap: 15px;

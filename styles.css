@@ -21,10 +21,54 @@
   /* Header Container */
 .header {
     background-color: #393f4d;
-    grid-area: 1 / 2 / 3 / 2; 
+    grid-area: 1 / 2 / 2 / 3; 
+
+
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 2fr 3fr;
+    grid-template-columns: 3fr 2fr; 
 
 }
-  
+
+#search{
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 9fr; 
+}
+#search-grid-item{
+    border-color: #b6c48e;
+    border-width: 2px;
+}
+
+#profile{
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 2fr; 
+
+}
+#greeting{
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 3fr; 
+
+}
+#interact-buttons{
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
+
+}
+
   /* Sidebare Container */
 .sidebar{
     background-color: #b6c48e;
@@ -32,16 +76,47 @@
 
     overflow: auto;
     display: grid;
-    /* gap: 4px; */
-    border: 1px solid grey;
-    background-color: skyblue;
+    gap: 4px;
     grid-template-rows: 1fr 3fr 3fr;
     grid-template-columns: 1fr;
 
 }
 
-#logo{
+#dash{
+    place-self: center;
+}
+
+#navigation{
+    height: 100%;
+    background-color: rgb(23, 77, 99);
+    align-self: start;
+
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+.nav-grid-item{
     
+    place-self: center;
+    /*  */
+}
+
+#settings{
+    align-self: start;
+    height: 100%;
+    background-color: skyblue;
+    align-self: start;
+
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr 5fr ;
+    grid-template-columns: 1fr;
 }
 
 /* main-content container */

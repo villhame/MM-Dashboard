@@ -9,7 +9,7 @@
     height: 100vh;
     text-align: center;
     resize: both;
-    overflow: auto;
+
     display: grid;
     /* gap: 4px; */
     border: 1px solid grey;
@@ -25,7 +25,7 @@
     grid-area: 1 / 2 / 2 / 3; 
 
 
-    overflow: auto;
+
     display: grid;
     gap: 4px;
     grid-template-rows: 2fr 3fr;
@@ -37,7 +37,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 }
 
 #search{
-    overflow: auto;
+
     display: grid;
     gap: 4px;
     grid-template-rows: 1fr;
@@ -74,7 +74,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 }
 
 #profile{
-    overflow: auto;
+
     display: grid;
     gap: 4px;
     grid-template-rows: 1fr;
@@ -109,7 +109,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 
 
 #greeting{
-    overflow: auto;
+
     display: grid;
     gap: 4px;
     grid-template-rows: 1fr 1fr;
@@ -139,7 +139,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 
 
 #interact-buttons{
-    overflow: auto;
+
     display: grid;
     gap: 4px;
     grid-template-rows: 1fr;
@@ -153,8 +153,8 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 }
 
 .myButton {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
+    background-color: #b8b8b8; /* Blue background */
+    color: rgb(0, 0, 0); /* White text */
     padding: 10px 20px; /* Top & bottom padding, left & right padding */
     border: none; /* No border */
     border-radius: 5px; /* Slightly rounded corners */
@@ -175,12 +175,15 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
     box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Lower shadow to simulate pressing */
     transform: translateY(1px); /* Button goes back down when pressed */
   }
+
+
+  
   /* Sidebare Container */
 .sidebar{
     background-color: #b8b8b8;
     grid-area: 1 / 1 / 3 / 2; 
 
-    overflow: auto;
+
     display: grid;
     gap: 4px;
     grid-template-rows: 1fr 3fr 3fr;
@@ -190,7 +193,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
 
 #dash{
     /* place-self: center; */
-    overflow: auto;
+
     display: grid;
     gap: 4px;
 
@@ -211,7 +214,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
     /* background-color: rgb(23, 77, 99); */
     align-self: start;
 
-    overflow: auto;
+
     display: grid;
     gap: 4px;
 
@@ -237,7 +240,7 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
     /* background-color: skyblue; */
     align-self: start;
 
-    overflow: auto;
+
     display: grid;
     gap: 4px;
 
@@ -250,47 +253,117 @@ box-shadow: 2px 6px 5px 3px rgba(0,0,0,0.25);
     background-color: #ccdbff;
     grid-area: 2 / 2 / 3 / 3; 
 
-    overflow: auto;
+
     display: grid;
-    gap: 15px;
+    /* gap: 15px; */
     grid-template-rows: 1fr;
     grid-template-columns: 3fr 1fr; 
 }      
 
 #blogs {
-    overflow: auto;
+    width: 100%;
+    height: 100%;
     display: grid;
     gap: 15px;
-    grid-template-rows: 1fr 3fr 3fr 3fr;
+    grid-template-rows: 1fr 5fr 5fr 5fr;
     grid-template-columns: 1fr 1fr; 
 
 }
 #blog-title{
     grid-area: 1 / 1 / 2 / 3; 
+    /* padding: 30px; Spacing inside the card */
+    margin: 3vh; /* Spacing around the card */
+    justify-self: start;
+    align-self: center;
+    font-weight: bolder;
+    font-size: 3vh;
 }
 
 
+.blog-grid-item {
+    background-color: #ffffff; /* Card background color */
+    border-radius: 10px; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow to lift the card off the page */
+    /* width: 75%; 
+    height: 75%; */
+    padding: 30px; /* Spacing inside the card */
+    margin: 3vh; /* Spacing around the card */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+
+    display: grid;
+    gap: 15px;
+    grid-template-rows: 4fr 1fr;
+    grid-template-columns: 1fr; 
+  }
+
+  .blog-grid-item:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Darker shadow on hover for a "lifting" effect */
+  }
+
+.blog-item{
+    text-align: start;
+    justify-self: start;
+    align-self: start;
+}
+
+
+.blog-logo{
+    height: 100%;
+    width:  100%;
+    justify-self: end;
+    align-self: start;
+
+    display: grid;
+    gap: 15px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5fr 1fr 1fr 1fr; 
+}
 
 
 #right-sidebar{
-    background-color: #7583a3;
-    overflow: auto;
+    background-color: #ccdbff;
+
     display: grid;
     gap: 15px;
     grid-template-rows: 1fr 5fr 1fr 5fr;
     grid-template-columns: 1fr; 
 
 }
+#announcements-title, #trending-title{
+    margin-left: 3vh;
+    justify-self: start;
+    align-self: end;
+    font-weight: bolder;
+    font-size: 12pt;
+}
 
 #announcements{
-    overflow: auto;
+
+    background-color: #ffffff; /* Card background color */
+    border-radius: 10px; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow to lift the card off the page */
+    /* width: 75%; 
+    height: 75%; */
+    padding: 30px; /* Spacing inside the card */
+    margin: 3vh; /* Spacing around the card */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+
     display: grid;
     gap: 15px;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr; 
 }
 #trending{
-    overflow: auto;
+
+    background-color: #ffffff; /* Card background color */
+    border-radius: 10px; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow to lift the card off the page */
+    /* width: 75%; 
+    height: 75%; */
+    padding: 30px; /* Spacing inside the card */
+    margin: 3vh; /* Spacing around the card */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+
     display: grid;
     gap: 15px;
     grid-template-rows: 1fr 1fr 1fr;
